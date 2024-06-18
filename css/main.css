@@ -673,4 +673,140 @@ video::before {
         width: 25%;
     }
 }
+
 /* end stats */
+/* start skills */
+.skills {
+    padding: var(--section-padding) 0;
+}
+
+.skills .container {
+    display: flex;
+    gap: 80px;
+    flex-wrap: wrap;
+}
+
+.skills .container>div {
+    width: calc(50% - 40px);
+}
+
+@media (max-width: 992px) {
+    .skills .container>div {
+        width: 100%;
+    }
+}
+
+.skills .container .header h3 {
+    margin: 0 0 30px;
+    font-weight: normal;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.skills .container .header p {
+    color: #777;
+    line-height: 2;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.skills .body .person {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.skills .body .person .text {
+    line-height: 1.8;
+    border-bottom: 1px solid #ccc;
+}
+
+.skills .body .person .text p {
+    color: #777;
+    text-align: right;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.skills .body .person img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 30px;
+}
+
+.skills .bullets {
+    display: flex;
+    gap: 4px;
+    justify-content: center;
+}
+
+.skills .bullets li {
+    display: block;
+    height: 20px;
+    width: 20px;
+    border: 1px solid #777;
+    border-radius: 50%;
+}
+
+.skills .bullets li.active {
+    background-color: var(--main-color);
+    border-color: var(--main-color);
+}
+
+.skills .second .body h4 {
+    margin-bottom: 15px;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+.skills .second .body .percentage {
+    height: 30px;
+    background-color: #dedadc;
+    position: relative;
+    margin-bottom: 30px;
+}
+.skills .second .body .percentage > div {
+    background-color: var(--main-color);
+    height: 100%;
+    position: relative;
+
+}
+.skills .second .body .percentage > div::after {
+    content: attr(per);
+    padding: 5px;
+    color: white;
+    background-color: black;
+    position: absolute;
+    right: 0;
+    top: -50px;
+    transform: translateX(50%);
+    border-radius: 5px;
+}
+.skills .second .body .percentage > div::before {
+    content: "";
+    border: 10px solid black;
+    border-color: black transparent transparent;
+    position: absolute;
+    right: 0;
+    top: -22px;
+    transform: translateX(50%);
+}
+
+
+
+
+
+@media (max-width:767px) {
+    .skills .body .person {
+       flex-direction: column;
+       justify-content: center;
+       align-items: center;
+       text-align: center;
+       gap: 30px;
+    }
+    .skills .body .person img {
+        margin-right: 0;
+    }
+}
+/* end skills */
