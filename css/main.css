@@ -2,6 +2,7 @@
 :root {
     --main-color: #19c8fa;
     --transparent-color: rgb(15 116 143 / 70%);
+    --section-padding: 100px;
 }
 
 /* End variables */
@@ -19,8 +20,8 @@ html {
 }
 
 body {
-    font-family: "Work Sans", sans-serif;
-    background-color: black;
+    font-family: "Open Sans", sans-serif;
+    background-color: red;
 }
 
 ul {
@@ -50,6 +51,47 @@ ul {
 @media (min-width: 1200px) {
     .container {
         width: 1170px;
+    }
+}
+
+.special-heading {
+    font-weight: normal;
+    font-size: 40px;
+    margin-bottom: 70px;
+    text-transform: uppercase;
+    text-align: center;
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        width: 150px;
+        height: 2px;
+        bottom: -20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: black;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: 2px solid black;
+        bottom: -20px;
+        left: 50%;
+        transform: translateX(-50%) translateY(50%);
+        background-color: white;
+    }
+
+    &+p {
+        max-width: 550px;
+        text-align: center;
+        margin: 0 auto;
+        margin-bottom: 100px;
+        color: #777;
     }
 }
 
@@ -171,7 +213,7 @@ header .logo img {
 /* Start landing */
 .landing {
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     background-image: url("../images/owl.jpg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -256,13 +298,57 @@ header .logo img {
     .landing .text {
         width: 100%;
     }
+
     .landing .text .content {
         max-width: 100%;
         text-align: center;
     }
+
     .landing .arrows {
         display: none;
     }
 }
 
 /* End landing */
+
+/* Start services */
+.services {
+    background-color: white;
+    padding: var(--section-padding) 0;
+}
+
+.services .items .item {
+    display: flex;
+    gap: 50px;
+    margin-bottom: 40px;
+}
+
+.services .items .item h3 {
+    color: var(--main-color);
+    margin-bottom: 30px;
+}
+
+.services .items .item p {
+    color: #777;
+    line-height: 2;
+}
+
+@media (min-width: 768px) {
+    .services .items {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+        gap: 40px;
+    }
+
+}
+
+@media (max-width:767px) {
+    .services .items .item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap:20px;
+    }
+}
+
+/* End services */
