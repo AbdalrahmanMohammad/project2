@@ -101,6 +101,7 @@ a.button {
     padding: 15px 20px;
     color: white;
     text-decoration: none;
+    text-transform: capitalize;
 }
 
 /* End global rules */
@@ -1042,3 +1043,68 @@ video::before {
 }
 
 /* end subscribe */
+
+/* start contact */
+.contact {
+    padding: var(--section-padding) 0;
+}
+
+.contact .wraper {
+    display: flex;
+    gap: 5%;
+}
+
+.contact .wraper form {
+    flex-basis: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact .wraper form input,
+.contact .wraper form textarea {
+    padding: 20px;
+    border: 1px solid #777;
+    outline: none;
+}
+.contact .wraper .button{
+    align-self: flex-end;
+}
+.contact .wraper .info {
+    flex-basis: 25%;
+}
+
+.contact .info h4 {
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    font-weight: 500;
+    font-size: 18px;
+}
+.contact .info .phone{
+    color: #777;
+    line-height: 2;
+}
+.contact .info h4:last-of-type {
+    margin-top: 75px;
+}
+.contact address{
+    color: #777;
+    line-height: 2;
+}
+@media (max-width:767px)
+{
+    .contact .wraper {
+        flex-direction: column-reverse;
+    }
+    .contact .info{
+        margin: auto;
+        text-align: center;
+    }
+    .contact .info h4:last-of-type {
+        margin-top: 30px;
+    }
+    .contact address{
+        margin-bottom: 30px;
+    }
+}
+/* end contact */
